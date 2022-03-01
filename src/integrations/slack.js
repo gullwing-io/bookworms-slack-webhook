@@ -1,5 +1,5 @@
 import slackifyMarkdown from "slackify-markdown";
-import { getBookmarks, listOfBookmarksMarkDown } from "../bookworms.js";
+import { getBookmarks, listOfBookmarksMarkDown } from "./bookworms.js";
 
 const headerForSlackMessage = (title) => {
   return [
