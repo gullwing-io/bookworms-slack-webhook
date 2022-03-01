@@ -1,9 +1,11 @@
+import bodyParser from "body-parser";
 import { init } from "./src/bookworms";
 
 export default async (route = "/webhooks/slack/bookworms", path) => {
+  const urlencodedParser = bodyParser.urlencoded({ extended: false });
   init(path);
   return (app, options) => {
-    app.get(route, (request, reply, next) => {
+    app.post(route, urlencodedParser, (request, reply, next) => {
       if (!path) {
         reply.send(`No bookmarks found`);
       } else {
