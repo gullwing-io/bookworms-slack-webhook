@@ -35,6 +35,7 @@
   "dependencies": {
     "body-parser": "^1.19.2",
     "bookworms": "^1.3.2",
+    "fastify-formbody": "^5.2.0",
     "slackify-markdown": "^4.3.1"
   }
 }
