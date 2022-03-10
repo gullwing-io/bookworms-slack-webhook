@@ -1,7 +1,11 @@
 import express from "express";
+// including to see if we can handle if already added
+import bodyParser from "body-parser";
 import { expressWorms } from "../../index.js";
 const app = express();
 const port = 3000;
+
+app.use(bodyParser.urlencoded({ extended: false }));
 
 await expressWorms(
   app,
