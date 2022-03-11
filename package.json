@@ -1,6 +1,6 @@
 {
   "name": "bookworms-slack-webhook",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "This is a simple module to add a route into your server and have slack updates.",
   "main": "./index.js",
   "type": "module",
