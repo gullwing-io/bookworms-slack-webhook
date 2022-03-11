@@ -66,6 +66,14 @@ await fastWorms(
 - path - _Required_ where the Bookworms bookmarks are coming from, this could be a local or remote `YAML` file. For more information see [Bookworms](https://github.com/thearegee/bookworms)
 - route - the path on your webservers hostname Slack will use as a webhook. This parameter is optional with a default value of: `/webhooks/slack/bookworms`
 
+### Parsing POST in Fastify
+
+Currently because of an issue raised here: [https://github.com/fastify/help/issues/642](https://github.com/fastify/help/issues/642)
+
+You need to ensure [`fastify-formbody`](https://github.com/fastify/fastify-formbody) is registered in your webserver.
+
+See the Fastify example for more details.
+
 ### Examples
 
 Below are simple examples of building a simple webserver with a webhook for Slack to use.
@@ -96,9 +104,12 @@ app.listen(port, () => {
 
 ```JavaScript
 import Fastify from "fastify";
+import fastifyForm from "fastify-formbody";
 import { fastWorms } from "../../index.js";
 const app = Fastify();
 const port = 3000;
+
+app.register(fastifyForm);
 
 await fastWorms(
   app,
@@ -133,3 +144,4 @@ This webhook works on using [Slash commands](https://api.slack.com/interactivity
 - Test automation
 - I dont really like there is a fastify and express export, want to clean that up a bit
 - Would be nice to drill into deep folders
+- There is currently a bug with double registering fastify form: https://github.com/fastify/help/issues/642
