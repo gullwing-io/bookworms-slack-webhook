@@ -6,11 +6,9 @@ const app = Fastify();
 const port = 3000;
 
 app.register(fastifyForm);
-
-await fastWorms(
-  app,
-  "https://raw.githubusercontent.com/thearegee/bookworms/main/demo/config/bookmarks.yaml"
-);
+app.register(fastWorms, {
+  path: "https://raw.githubusercontent.com/thearegee/bookworms/main/demo/config/bookmarks.yaml",
+});
 
 app.get("/", (request, reply) => {
   reply.send("Hello World!");

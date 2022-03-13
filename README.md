@@ -46,54 +46,17 @@ $ npm i bookworms-slack-webhook
 
 Once its added to your project you can import it into your webserver.
 
-```JavaScript
-import { expressWorms, fastWorms } from "bookworms-slack-webhook";
-```
-
-There is a different export for the two webservers but they have the same interface.
-
-```JavaScript
-await expressWorms(
-  app,
-  path,
-  route
-);
-
-await fastWorms(
-  app,
-  path,
-  route
-);
-```
-
-- app - _Required_ the instance of your webserver
-- path - _Required_ where the Bookworms bookmarks are coming from, this could be a local or remote `YAML` file. For more information see [Bookworms](https://github.com/thearegee/bookworms)
-- route - the path on your webservers hostname Slack will use as a webhook. This parameter is optional with a default value of: `/webhooks/slack/bookworms`
-
-### Parsing POST in Fastify
-
-Currently because of an issue raised here: [https://github.com/fastify/help/issues/642](https://github.com/fastify/help/issues/642)
-
-You need to ensure [`fastify-formbody`](https://github.com/fastify/fastify-formbody) is registered in your webserver.
-
-See the Fastify example for more details.
-
-### Examples
-
-Below are simple examples of building a simple webserver with a webhook for Slack to use.
-
-#### Express
+### Express
 
 ```JavaScript
 import express from "express";
-import { expressWorms } from "bookworms-slack-webhook";
+import { expressWorms } from "../../index.js";
 const app = express();
 const port = 3000;
 
-expressWorms(
-  app,
-  "https://raw.githubusercontent.com/thearegee/bookworms/main/demo/config/bookmarks.yaml"
-);
+await expressWorms(app, {
+  path: "https://raw.githubusercontent.com/thearegee/bookworms/main/demo/config/bookmarks.yaml",
+});
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
@@ -104,21 +67,22 @@ app.listen(port, () => {
 });
 ```
 
-#### Fastify
+- app - _Required_ the instance of your express server
+- options - object of options for setting up Bookworms
+  - path - _Required_ where the Bookworms bookmarks are coming from, this could be a local or remote `YAML` file. For more information see [Bookworms](https://github.com/thearegee/bookworms)
+  - route - the path on your webservers hostname Slack will use as a webhook. This parameter is optional with a default value of: `/webhooks/slack/bookworms`
+
+### Fastify
 
 ```JavaScript
 import Fastify from "fastify";
-import fastifyForm from "fastify-formbody";
 import { fastWorms } from "../../index.js";
 const app = Fastify();
 const port = 3000;
 
-app.register(fastifyForm);
-
-await fastWorms(
-  app,
-  "https://raw.githubusercontent.com/thearegee/bookworms/main/demo/config/bookmarks.yaml"
-);
+app.register(fastWorms, {
+  path: "https://raw.githubusercontent.com/thearegee/bookworms/main/demo/config/bookmarks.yaml",
+});
 
 app.get("/", (request, reply) => {
   reply.send("Hello World!");
@@ -128,6 +92,10 @@ app.listen(port, () => {
   console.log(`Example Fastify app listening on port ${port}`);
 });
 ```
+
+- options - object of options for setting up Bookworms
+  - path - _Required_ where the Bookworms bookmarks are coming from, this could be a local or remote `YAML` file. For more information see [Bookworms](https://github.com/thearegee/bookworms)
+  - route - the path on your webservers hostname Slack will use as a webhook. This parameter is optional with a default value of: `/webhooks/slack/bookworms`
 
 ## Integrated with Slack
 
