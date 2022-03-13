@@ -50,7 +50,7 @@ Once its added to your project you can import it into your webserver.
 
 ```JavaScript
 import express from "express";
-import { expressWorms } from "../../index.js";
+import { expressWorms } from "bookworms-slack-webhook";
 const app = express();
 const port = 3000;
 
@@ -76,7 +76,7 @@ app.listen(port, () => {
 
 ```JavaScript
 import Fastify from "fastify";
-import { fastWorms } from "../../index.js";
+import { fastWorms } from "bookworms-slack-webhook";
 const app = Fastify();
 const port = 3000;
 
@@ -114,9 +114,7 @@ This webhook works on using [Slash commands](https://api.slack.com/interactivity
 
 - [Bookworms](https://github.com/thearegee/bookworms) was not designed to be included as part of a webserver so it uses console log and also exits process on an error. These are not ideal for web service so need to be fixed
 - Test automation
-- I dont really like there is a fastify and express export, want to clean that up a bit
 - Would be nice to drill into deep folders
-- There is currently a bug with double registering fastify form: https://github.com/fastify/help/issues/642
 
 ## Credits
 
