@@ -1,0 +1,205 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Utilties requestHandler should return folder not found 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "blocks": Array [
+          Object {
+            "text": Object {
+              "text": "Bookmarks",
+              "type": "plain_text",
+            },
+            "type": "header",
+          },
+          Object {
+            "type": "divider",
+          },
+          Object {
+            "text": Object {
+              "text": "Sorry junk could not be found, use \`/bookmarks all\` for a list of available bookmarks
+",
+              "type": "mrkdwn",
+            },
+            "type": "section",
+          },
+        ],
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Utilties requestHandler should return valid folder found 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "blocks": Array [
+          Object {
+            "text": Object {
+              "text": "Bookmarks",
+              "type": "plain_text",
+            },
+            "type": "header",
+          },
+          Object {
+            "type": "divider",
+          },
+          Object {
+            "text": Object {
+              "text": "*folder 1*
+
+This is to describe the folder structure
+
+*sub folder 1*
+
+This is to describe the sub folder structure
+
+•   <https://www.mywebsite.com|sample url 1> - this is used to describe the bookmark
+
+​_These bookmarks were last updated on 13/03/2022, 14:01:53 using <https://github.com/thearegee/bookworms|Bookworms>_​
+",
+              "type": "mrkdwn",
+            },
+            "type": "section",
+          },
+        ],
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Utilties should return all bookmarks - all text 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "blocks": Array [
+          Object {
+            "text": Object {
+              "text": "Bookmarks",
+              "type": "plain_text",
+            },
+            "type": "header",
+          },
+          Object {
+            "type": "divider",
+          },
+          Object {
+            "text": Object {
+              "text": "Bookmarks are seperated into different domains, to get the specific bookmarks you can enter the following commands
+
+\`/bookmarks folder 1\`
+\`/bookmarks folder 2\`
+",
+              "type": "mrkdwn",
+            },
+            "type": "section",
+          },
+        ],
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Utilties should return all bookmarks - blank text 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "blocks": Array [
+          Object {
+            "text": Object {
+              "text": "Bookmarks",
+              "type": "plain_text",
+            },
+            "type": "header",
+          },
+          Object {
+            "type": "divider",
+          },
+          Object {
+            "text": Object {
+              "text": "Bookmarks are seperated into different domains, to get the specific bookmarks you can enter the following commands
+
+\`/bookmarks folder 1\`
+\`/bookmarks folder 2\`
+",
+              "type": "mrkdwn",
+            },
+            "type": "section",
+          },
+        ],
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Utilties should return all bookmarks - no text 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "blocks": Array [
+          Object {
+            "text": Object {
+              "text": "Bookmarks",
+              "type": "plain_text",
+            },
+            "type": "header",
+          },
+          Object {
+            "type": "divider",
+          },
+          Object {
+            "text": Object {
+              "text": "Bookmarks are seperated into different domains, to get the specific bookmarks you can enter the following commands
+
+\`/bookmarks folder 1\`
+\`/bookmarks folder 2\`
+",
+              "type": "mrkdwn",
+            },
+            "type": "section",
+          },
+        ],
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
