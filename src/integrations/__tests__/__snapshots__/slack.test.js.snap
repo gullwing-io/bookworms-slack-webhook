@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slack sendBookMarks should return markdown found bookmarks 1`] = `
+Object {
+  "blocks": Array [
+    Object {
+      "text": Object {
+        "text": "Bookmarks",
+        "type": "plain_text",
+      },
+      "type": "header",
+    },
+    Object {
+      "type": "divider",
+    },
+    Object {
+      "text": Object {
+        "text": "*folder 1*
+
+This is to describe the folder structure
+
+*sub folder 1*
+
+This is to describe the sub folder structure
+
+•   <https://www.mywebsite.com|sample url 1> - this is used to describe the bookmark
+
+​_These bookmarks were last updated on 26/03/2022, 18:09:37 using <https://github.com/thearegee/bookworms|Bookworms>_​
+",
+        "type": "mrkdwn",
+      },
+      "type": "section",
+    },
+  ],
+}
+`;
+
+exports[`Slack sendBookMarks should return markdown unfound bookmarks 1`] = `
+Object {
+  "blocks": Array [
+    Object {
+      "text": Object {
+        "text": "Bookmarks",
+        "type": "plain_text",
+      },
+      "type": "header",
+    },
+    Object {
+      "type": "divider",
+    },
+    Object {
+      "text": Object {
+        "text": "Sorry undefined could not be found, use \`/bookmarks all\` for a list of available bookmarks
+",
+        "type": "mrkdwn",
+      },
+      "type": "section",
+    },
+  ],
+}
+`;
+
+exports[`Slack sendBookmarkCommands should return markdown for all commands 1`] = `
+Object {
+  "blocks": Array [
+    Object {
+      "text": Object {
+        "text": "Bookmarks",
+        "type": "plain_text",
+      },
+      "type": "header",
+    },
+    Object {
+      "type": "divider",
+    },
+    Object {
+      "text": Object {
+        "text": "Bookmarks are seperated into different domains, to get the specific bookmarks you can enter the following commands
+
+\`/bookmarks folder 1\`
+\`/bookmarks folder 2\`
+",
+        "type": "mrkdwn",
+      },
+      "type": "section",
+    },
+  ],
+}
+`;

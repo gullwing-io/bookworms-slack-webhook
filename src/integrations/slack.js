@@ -46,4 +46,4 @@ const sendBookMarks = (text) => {
   };
 };
 
-export { sendBookMarks, sendBookmarkCommands };
+export { sendBookMarks, sendBookmarkCommands, headerForSlackMessage };

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Bookworms getBookmarks should return markdown for found folder 1`] = `
+"
+
+
+## folder 1
+
+This is to describe the folder structure
+
+
+### sub folder 1
+
+This is to describe the sub folder structure
+
+* [sample url 1](https://www.mywebsite.com) - this is used to describe the bookmark
+
+_These bookmarks were last updated on 26/03/2022, 18:09:37 using [Bookworms](https://github.com/thearegee/bookworms)_"
+`;
+
+exports[`Bookworms getBookmarks should return markdown for unfound folder 1`] = `"Sorry junk could not be found, use \`/bookmarks all\` for a list of available bookmarks    "`;
+
+exports[`Bookworms listOfBookmarksMarkDown should return all folders for commands 1`] = `
+"Bookmarks are seperated into different domains, to get the specific bookmarks you can enter the following commands
+    
+\`/bookmarks folder 1\`
+\`/bookmarks folder 2\`
+    
+    "
+`;

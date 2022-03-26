@@ -48,4 +48,4 @@ const findBookMarkFolder = (name, folders) => {
 
 const getBookmarks = (folder) => generateBookmarkMarkdown(folder);
 
-export { init, getBookmarks, listOfBookmarksMarkDown };
+export { init, getBookmarks, listOfBookmarksMarkDown, findBookMarkFolder };
