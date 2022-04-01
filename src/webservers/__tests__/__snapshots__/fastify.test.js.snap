@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fastify server test should return bookworms response from post 1`] = `"{\\"blocks\\":[{\\"type\\":\\"header\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\"Bookmarks\\"}},{\\"type\\":\\"divider\\"},{\\"type\\":\\"section\\",\\"text\\":{\\"type\\":\\"mrkdwn\\",\\"text\\":\\"Bookmarks are seperated into different domains, to get the specific bookmarks you can enter the following commands\\\\n\\\\n\`/bookmarks folder 1\`\\\\r\\\\n\`/bookmarks folder 2\`\\\\n\\"}}]}"`;

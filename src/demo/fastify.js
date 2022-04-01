@@ -1,7 +1,7 @@
 import Fastify from "fastify";
 import { fastWorms } from "../../index.js";
 const app = Fastify();
-const port = 3000;
+const port = 4000;
 
 app.register(fastWorms, {
   path: "https://raw.githubusercontent.com/thearegee/bookworms/main/demo/config/bookmarks.yaml",
@@ -14,3 +14,5 @@ app.get("/", (request, reply) => {
 app.listen(port, () => {
   console.log(`Example Fastify app listening on port ${port}`);
 });
+
+export default app;
