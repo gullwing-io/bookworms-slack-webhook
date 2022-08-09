@@ -118,4 +118,4 @@ This webhook works on using [Slash commands](https://api.slack.com/interactivity
 
 ## Credits
 
-The Bookworms logo was created by [James Barry Illustrations](https://www.jamesbarryillustration.com/).
+The Bookworms logo was created by [gullwing.io](https://www.gullwing.io/).
