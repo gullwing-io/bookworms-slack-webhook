@@ -1,9 +1,10 @@
-import { loadBookmarks, generateBookmarks } from "bookworms";
+import readJsYaml from "read-js-yaml";
+import { generateBookmarks } from "bookworms";
 
 let bookmarks = "";
 
 const init = async (path) => {
-  const { body } = await loadBookmarks.fetchBookmarkConfig(path);
+  const { body } = await readJsYaml(path);
   bookmarks = body;
 };
 

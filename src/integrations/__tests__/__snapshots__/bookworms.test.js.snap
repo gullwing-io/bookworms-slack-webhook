@@ -15,7 +15,7 @@ This is to describe the sub folder structure
 
 * [sample url 1](https://www.mywebsite.com) - this is used to describe the bookmark
 
-_These bookmarks were last updated on 26/03/2022, 18:09:37 using [Bookworms](https://github.com/thearegee/bookworms)_"
+_These bookmarks were last updated on 28/10/2022, 16:01:31 using [Bookworms](https://github.com/thearegee/bookworms)_"
 `;
 
 exports[`Bookworms getBookmarks should return markdown for unfound folder 1`] = `"Sorry junk could not be found, use \`/bookmarks all\` for a list of available bookmarks    "`;
